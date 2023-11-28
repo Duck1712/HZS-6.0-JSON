@@ -1,11 +1,11 @@
 using BusinessLogic.Services;
-using FleetManager.Models;
+using HZS.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HZS.Controllers{
     [ApiController]
     [Route("[controller]")]
-    public UserController : ControllerBase{
+    public class UserController{
         private readonly ILogger<UserController> _logger;
         private IUserService _UserService;
 
@@ -28,7 +28,7 @@ namespace HZS.Controllers{
         }
 
         [HttpPost(Name = "AddUser")]
-        public ActionResult Add()
+        public ActionResult Add(Guid Id, AddUser AddRequest)
         {
             throw new NotImplementedException();
         }
