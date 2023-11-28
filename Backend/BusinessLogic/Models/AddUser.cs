@@ -1,10 +1,10 @@
 namespace HZS.Models{
     public class AddUser{
         public Guid Id { get; set; }
-        public String Username { get; set; }
-        public String Password { get; set; }
-        public String FirstName { get; set; }
-        public String LastName { get; set; }
-        public String Email { get; set; }
+        public string Username { get; set; } = default!;
+        public string Password { get; set; } = default!;
+        public string FirstName { get; set; } = default!;
+        public string LastName { get; set; } = default!;
+        public string Email { get; set; } = default!;
     }
 }
