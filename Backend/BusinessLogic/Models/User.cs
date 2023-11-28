@@ -16,5 +16,7 @@ namespace HZS.Models{
         [Required]
         public string Email { get; set; } = default!;
         public int Xp { get; set; } = 0;
+
+        public List<Post> posts = new();
     }
 }

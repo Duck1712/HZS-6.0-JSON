@@ -1,0 +1,8 @@
+Backend/Backend.csproj
+Backend/obj/Backend.csproj.nuget.dgspec.json
+Backend/obj/Backend.csproj.nuget.g.props
+Backend/obj/Backend.csproj.nuget.g.targets
+Backend/obj/project.assets.json
+Backend/obj/Debug/net8.0/Backend.csproj.AssemblyReference.cache
+Backend/obj/project.nuget.cache
+Backend/obj/Debug/net8.0/Backend.assets.cache
