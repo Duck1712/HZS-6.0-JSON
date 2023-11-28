@@ -2,24 +2,29 @@ using HZS.Models;
 
 namespace BusinessLogic.Services;
 
-public class UserService : IUserService
+public class PostService : IPostService
 {
-    public User AddUser(Guid Id, AddUser AddRequest)
+    public Post Add(Post Post)
     {
         throw new NotImplementedException();
     }
 
-    public void DeleteUser(Guid id)
+    public void Delete(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public List<User> Get()
+    public List<Post> GetAllPosts()
     {
         throw new NotImplementedException();
     }
 
-    public User Update(Guid id, PutUser updateRequest)
+    public Post GetById(Guid Id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public List<Post> GetLogsByCarId()
     {
         throw new NotImplementedException();
     }

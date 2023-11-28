@@ -7,12 +7,12 @@ namespace HZS.Controllers{
     [Route("[controller]")]
     public class UserController{
         private readonly ILogger<UserController> _logger;
-        private IUserService _UserService;
+        private IUserService _userService;
 
         public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
-            _UserService = new UserService();
+            _userService = new UserService();
         }
 
         [HttpGet(Name = "GetAllUsers")]
