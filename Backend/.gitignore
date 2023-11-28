@@ -2,3 +2,5 @@
 /obj/Backend.csproj.nuget.g.props
 /obj/project.assets.json
 /obj/project.nuget.cache
+/obj/Debug/net8.0/Backend.AssemblyInfo.cs
+/obj/Debug/net8.0/Backend.AssemblyInfoInputs.cache
