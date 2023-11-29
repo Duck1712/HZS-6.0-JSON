@@ -39,13 +39,13 @@ namespace HZS.Controllers{
             _userService.DeleteUser(id);
         }
 
-        [HttpPut("{id}",Name ="UpdateUserXp")]
+        [HttpPut("{id}/xp",Name ="UpdateUserXp")]
         public void UpdateXp(Guid id, PutUserXp updateRequest)
         {
             _userService.UpdateXp(id, updateRequest);
         }
 
-        [HttpGet(Name = "GetUserById")]
+        [HttpGet("{id}",Name = "GetUserById")]
         public User GetUserById(Guid id)
         {
             return _userService.GetById(id);
