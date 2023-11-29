@@ -24,13 +24,13 @@ namespace HZS.Controllers{
         [HttpPut("{id}",Name ="UpdateUser")]
         public void Update(Guid id, PutUser updateRequest)
         {
-            return _userService.Update(id, updateRequest);
+            _userService.Update(id, updateRequest);
         }
 
         [HttpPost(Name = "AddUser")]
         public void Add(AddUser AddRequest)
         {
-            return _userService.AddUser(AddRequest);
+            _userService.AddUser(AddRequest);
         }
 
         [HttpDelete("{id}",Name ="DeleteUser")]
@@ -42,7 +42,7 @@ namespace HZS.Controllers{
         [HttpPut("{id}",Name ="UpdateUserXp")]
         public void UpdateXp(Guid id, PutUserXp updateRequest)
         {
-            return _userService.UpdateXp(id, updateRequest);
+            _userService.UpdateXp(id, updateRequest);
         }
 
         [HttpGet(Name = "GetUserById")]
