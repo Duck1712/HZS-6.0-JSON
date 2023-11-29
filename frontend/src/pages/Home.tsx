@@ -10,8 +10,11 @@ export const Home = () =>
                 <h1>Test!</h1>
                 <Break />
                 <Post />
+                <Break />
                 <Post />
+                <Break />
                 <Post />
+                <Break />
                 <Post />
             </PostContainer>
             <Leaderboard />
@@ -40,6 +43,6 @@ export const PostContainer = styled.div`
 
 export const Break = styled.div`
     flex-basis:100%;
-    height:0;
+    height:10px;
 
 `
