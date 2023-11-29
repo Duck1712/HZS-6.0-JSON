@@ -23,9 +23,4 @@ public class PostService : IPostService
     {
         throw new NotImplementedException();
     }
-
-    public List<Post> GetLogsByCarId()
-    {
-        throw new NotImplementedException();
-    }
 }
