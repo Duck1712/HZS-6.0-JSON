@@ -35,22 +35,21 @@ public class UserService : IUserService
 
     public void Update(Guid id, PutUser updateRequest)
     {
-        var User u = db.users.Find(id);
         if (updateRequest.Password != null){
-            u.Password = updateRequest.Password;
+            db.users.Find(id).Password = updateRequest.Password;
         }
         if(updateRequest.Username != null){
-            u.Username = updateRequest.Username;
+            db.users.Find(id).Username = updateRequest.Username;
         }
         if(updateRequest.Email != null){
-            u.Email = updateRequest.Email;
+            db.users.Find(id).Email = updateRequest.Email;
         }
         db.SaveChanges();
     }
 
     public void UpdateXp(Guid id, PutUserXp updateRequest){
         if(updateRequest.Xp != null){
-            db.users.Find(id).Xp += updateRequest.Xp
+            db.users.Find(id).Xp += updateRequest.Xp;
             db.SaveChanges();
         }
     }

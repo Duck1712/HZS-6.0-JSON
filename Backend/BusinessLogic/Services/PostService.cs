@@ -7,15 +7,15 @@ using System.Linq;
 public class PostService : IPostService
 {
     Context db = new Context();
-    public void Add(AddPost updateRequest)
+    public void Add(AddPost AddRequest)
     {
         db.posts.Add(new Post {
             Id = Guid.NewGuid(),
-            Title = updateRequest.Title,
-            Content = updateRequest.Content,
-            Sport = updateRequest.Sport,
-            UserId = updateRequest.UserId,
-            user = updateRequest.user
+            Title = AddRequest.Title,
+            Content = AddRequest.Content,
+            Sport = AddRequest.Sport,
+            UserId = AddRequest.UserId,
+            user = AddRequest.user
         });
         db.SaveChanges();
     }
@@ -31,7 +31,7 @@ public class PostService : IPostService
         return (db.posts).ToList<Post>();
     }
 
-    public Post GetById(Guid Id)
+    public Post GetById(Guid id)
     {
         return db.posts.Find(id);
     }
