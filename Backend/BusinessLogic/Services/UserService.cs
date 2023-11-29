@@ -10,6 +10,12 @@ public class UserService : IUserService
     
     public void AddUser(AddUser AddRequest)
     {
+        var query = from user in db.users
+                    where user.Username == AddRequest.Username
+                    select user;
+        if(query.Any()){
+            return;
+        }
         db.users.Add(new User {
             Id = Guid.NewGuid(),
             Username = AddRequest.Username,
