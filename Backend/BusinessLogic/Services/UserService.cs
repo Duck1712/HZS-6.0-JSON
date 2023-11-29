@@ -23,4 +23,12 @@ public class UserService : IUserService
     {
         throw new NotImplementedException();
     }
+
+    public User UpdateXp(Guid id, PutUserXp updateRequest){
+        throw new NotImplementedException();
+    }
+
+    public User GetById(Guid id){
+        throw new NotImplementedException();
+    }
 }

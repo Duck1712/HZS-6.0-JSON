@@ -16,27 +16,39 @@ namespace HZS.Controllers{
         }
 
         [HttpGet(Name = "GetAllUsers")]
-        public ActionResult Get()
+        public List<User> Get()
         {
-            throw new NotImplementedException();
+            return _userService.Get();
         }
 
         [HttpPut("{id}",Name ="UpdateUser")]
-        public ActionResult Update(Guid id, PutUser updateRequest)
+        public User Update(Guid id, PutUser updateRequest)
         {
-            throw new NotImplementedException();
+            return _userService.Update(id, updateRequest);
         }
 
         [HttpPost(Name = "AddUser")]
-        public ActionResult Add(Guid Id, AddUser AddRequest)
+        public User Add(Guid id, AddUser AddRequest)
         {
-            throw new NotImplementedException();
+            return _userService.AddUser(id, AddRequest);
         }
 
         [HttpDelete("{id}",Name ="DeleteUser")]
-        public ActionResult Update(Guid id)
+        public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _userService.DeleteUser(id);
+        }
+
+        [HttpPut("{id}",Name ="UpdateUserXp")]
+        public User UpdateXp(Guid id, PutUserXp updateRequest)
+        {
+            return _userService.UpdateXp(id, updateRequest);
+        }
+
+        [HttpGet(Name = "GetUserById")]
+        public User GetUserById(Guid id)
+        {
+            return _userService.GetById(id);
         }
     }
 }

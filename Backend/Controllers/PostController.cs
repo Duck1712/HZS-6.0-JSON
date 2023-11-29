@@ -30,14 +30,8 @@ namespace HZS.Controllers
             throw new NotImplementedException();
         }
 
-        [HttpGet("User/{userId}",Name ="PostsByUserId")]
-        public IActionResult PostsByUserId()
-        {
-            throw new NotImplementedException();
-        }
-
-        [HttpPost(Name ="AddLog")]
-        public IActionResult Post(Post Post)
+        [HttpPost(Name ="Add")]
+        public ActionResult Post(Post Post)
         {
             Post.Id = Guid.NewGuid();
             throw new NotImplementedException();
