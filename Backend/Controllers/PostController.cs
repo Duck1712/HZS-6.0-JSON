@@ -19,28 +19,28 @@ namespace HZS.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetAllPosts()
+        public List<Post> GetAllPosts()
         {
-           throw new NotImplementedException();
+           return _postService.GetAllPosts();
         }
 
         [HttpGet("{id}",Name = "GetById")]
-        public ActionResult GetById(Guid Id)
+        public Post GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _postService.GetById(id);
         }
 
         [HttpPost(Name ="Add")]
-        public ActionResult Post(Post Post)
+        public Post Post(Post Post)
         {
             Post.Id = Guid.NewGuid();
-            throw new NotImplementedException();
+            return _postService.Add(Post);
         }
 
         [HttpDelete("{id}", Name = "DeletePost")]
-        public ActionResult Delete(Guid id)
+        public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _postService.Delete(id);
         }
         
     }
