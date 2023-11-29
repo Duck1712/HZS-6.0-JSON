@@ -45,7 +45,7 @@ namespace HZS.Controllers{
             _userService.UpdateXp(id, updateRequest);
         }
 
-        [HttpGet(Name = "GetUserById")]
+        [HttpGet("{id}",Name = "GetUserById")]
         public User GetUserById(Guid id)
         {
             return _userService.GetById(id);
