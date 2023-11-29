@@ -24,7 +24,7 @@ public class UserService : IUserService
         throw new NotImplementedException();
     }
 
-    public UpdateXp(Guid id, PutUserXp updateRequest){
+    public User UpdateXp(Guid id, PutUserXp updateRequest){
         throw new NotImplementedException();
     }
 

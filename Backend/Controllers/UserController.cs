@@ -16,40 +16,39 @@ namespace HZS.Controllers{
         }
 
         [HttpGet(Name = "GetAllUsers")]
-        public ActionResult Get()
+        public List<User> Get()
         {
-            return Ok(_userService.Get());
+            return _userService.Get();
         }
 
         [HttpPut("{id}",Name ="UpdateUser")]
-        public ActionResult Update(Guid id, PutUser updateRequest)
+        public User Update(Guid id, PutUser updateRequest)
         {
-            return Ok(_userService.Update());
+            return _userService.Update(id, updateRequest);
         }
 
         [HttpPost(Name = "AddUser")]
-        public ActionResult Add(Guid Id, AddUser AddRequest)
+        public User Add(Guid id, AddUser AddRequest)
         {
-            return Ok(_userService.AddUser());
+            return _userService.AddUser(id, AddRequest);
         }
 
         [HttpDelete("{id}",Name ="DeleteUser")]
-        public ActionResult Delete(Guid id)
+        public void Delete(Guid id)
         {
             _userService.DeleteUser(id);
-            return Ok();
         }
 
         [HttpPut("{id}",Name ="UpdateUserXp")]
-        public ActionResult UpdateXp(Guid id, PutUserXp updateRequest)
+        public User UpdateXp(Guid id, PutUserXp updateRequest)
         {
-            return Ok(_userService.UpdateXp());
+            return _userService.UpdateXp(id, updateRequest);
         }
 
         [HttpGet(Name = "GetUserById")]
-        public ActionResult GetUserById()
+        public User GetUserById(Guid id)
         {
-            return Ok(_userService.GetById());
+            return _userService.GetById(id);
         }
     }
 }
