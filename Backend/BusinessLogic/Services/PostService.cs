@@ -1,26 +1,38 @@
 using HZS.Models;
 
 namespace BusinessLogic.Services;
+using System;
+using System.Linq;
 
 public class PostService : IPostService
 {
-    public Post Add(Post Post)
+    Context db = new Context();
+    public void Add(AddPost AddRequest)
     {
-        throw new NotImplementedException();
+        db.posts.Add(new Post {
+            Id = Guid.NewGuid(),
+            Title = AddRequest.Title,
+            Content = AddRequest.Content,
+            Sport = AddRequest.Sport,
+            UserId = AddRequest.UserId,
+            user = AddRequest.user
+        });
+        db.SaveChanges();
     }
 
     public void Delete(Guid id)
     {
-        throw new NotImplementedException();
+        db.Remove(db.posts.Find(id));
+        db.SaveChanges();
     }
 
     public List<Post> GetAllPosts()
     {
-        throw new NotImplementedException();
+        return (db.posts).ToList<Post>();
     }
 
-    public Post GetById(Guid Id)
+    public Post GetById(Guid id)
     {
-        throw new NotImplementedException();
+        return db.posts.Find(id);
     }
 }
