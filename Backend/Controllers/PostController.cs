@@ -31,9 +31,10 @@ namespace HZS.Controllers
         }
 
         [HttpPost(Name ="Add")]
-        public void Add(AddPost Post)
+        public Post Post(Post Post)
         {
-            _postService.Add(Post);
+            Post.Id = Guid.NewGuid();
+            return _postService.Add(Post);
         }
 
         [HttpDelete("{id}", Name = "DeletePost")]

@@ -6,7 +6,7 @@ public interface IPostService
 {
     List<Post> GetAllPosts();
     Post GetById(Guid Id);
-    void Add(AddPost AddRequest);
+    Post Add(Post Post);
     void Delete(Guid id);
 
 }
