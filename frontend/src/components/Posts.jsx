@@ -80,7 +80,6 @@ export const Posts = () =>
 
     return(
         <PostContainer>
-                
             <Content>
                 <h2>Ja sam primer posta!</h2>
                 <Break />
@@ -93,7 +92,7 @@ export const Posts = () =>
 const Content = styled.div`
     display:flex;
     flex-wrap:wrap;
-    border: 2px solid gray;
+    border: 2px solid navy;
     border-radius: 15px;
     width:95%;
     padding:10px;

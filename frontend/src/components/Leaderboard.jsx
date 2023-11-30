@@ -22,9 +22,7 @@ export const Leaderboard = () =>
 
     const GetLength = () => 
     {
-        const [len, setLen] = useState(0); // Create a state with an empty string as initial value
-        
-        // Send a request and on success, set the state to the response's body, and on fall set the state to the error message
+        const [len, setLen] = useState(0);
         useEffect(() => { async function func() {await users.then((response) => {
             setLen(response.length)
         })} func()});
@@ -34,8 +32,6 @@ export const Leaderboard = () =>
     const Component = () => 
     {
         const [usernames, setUsernames] = useState(new Array(length)); 
-        
-        // Send a request and on success, set the state to the response's body, and on fall set the state to the error message
         useEffect(() => { async function func() {users.then((response) => {
             var temp = [];
             if(length>0){
