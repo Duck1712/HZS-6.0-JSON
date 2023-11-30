@@ -4,23 +4,35 @@ namespace BusinessLogic.Services;
 
 public class PostService : IPostService
 {
-    public Post Add(Post Post)
+    Context db = new Context();
+    public void Add(AddPost updateRequest)
     {
-        throw new NotImplementedException();
+        db.posts.Add(new Post {
+            Id = Guid.NewGuid(),
+            Title = updateRequest.Title,
+            Content = updateRequest.Content,
+            Sport = updateRequest.Sport,
+            UserId = updateRequest.UserId,
+            user = updateRequest.user
+        });
+        db.SaveChanges();
     }
 
     public void Delete(Guid id)
     {
-        throw new NotImplementedException();
+        db.Remove(db.posts.Find(id));
+        db.SaveChanges();
     }
 
     public List<Post> GetAllPosts()
     {
-        throw new NotImplementedException();
+        
+        return db.posts.ToList();
     }
 
-    public Post GetById(Guid Id)
+    public Post GetById(Guid id)
     {
-        throw new NotImplementedException();
+        
+        return db.posts.Find(id);
     }
 }
