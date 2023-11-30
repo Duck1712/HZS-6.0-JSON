@@ -1,22 +1,12 @@
 import styled from "styled-components"
-import { Post } from "../components/Post"
+import { Posts } from "../components/Posts"
 import { Leaderboard } from "../components/Leaderboard"
 
 export const Home = () => 
 {
     return(
         <PageContainer>
-            <PostContainer>
-                <h1>Test!</h1>
-                <Break />
-                <Post />
-                <Break />
-                <Post />
-                <Break />
-                <Post />
-                <Break />
-                <Post />
-            </PostContainer>
+            <Posts />
             <Leaderboard />
         </PageContainer>
     )

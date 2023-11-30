@@ -17,34 +17,66 @@ export const Leaderboard = () =>
         return users;
     }
     var users = getUsers();
-    const Component = (i) => 
+
+
+
+    const GetLength = () => 
     {
-        const [username, setUsername] = useState(""); // Create a state with an empty string as initial value
+        const [len, setLen] = useState(0); // Create a state with an empty string as initial value
+        
+        // Send a request and on success, set the state to the response's body, and on fall set the state to the error message
+        useEffect(() => { async function func() {await users.then((response) => {
+            setLen(response.length)
+        })} func()});
+        return len;
+    }
+
+    const Component = () => 
+    {
+        const [usernames, setUsernames] = useState(new Array(length)); 
         
         // Send a request and on success, set the state to the response's body, and on fall set the state to the error message
         useEffect(() => { async function func() {users.then((response) => {
-            setUsername(response[i].username)
+            var temp = [];
+            if(length>0){
+                temp = new Array(length)
+                for(let i = 0; i< length; i++)
+                {
+                    temp[i] = response[i].username
+                }
+            }
+            setUsernames(temp);
         })} func()});
-        return username;
+        return usernames;
     }
-    var b;
-    var arr = []
-    for(let i =0; i<3;i++)
+
+    var contestant;
+    var length = GetLength();
+    const usernames = Component();
+    if(length>0)
     {
-        const username = Component(i)
-        console.log(username);
-        b = (
-            <Contestant>
-                <h1>#{i+1}</h1>{/*"#{index+1}"*/}
-                <ContestantText>{username}</ContestantText>
-            </Contestant>)
-        arr[i] = b
+        var arr = new Array(length);
+        for(let i =0; i<length;i++)
+        {
+            contestant = (
+                <Contestant>
+                    <h1>#{i+1}</h1>{/*"#{index+1}"*/}
+                    <ContestantText>{usernames[i]}</ContestantText>
+                </Contestant>)
+            arr[i] = contestant;
+        }
+        return(
+            <LbContainer>      
+                {arr}       
+            </LbContainer>
+        )
     }
     return(
-        <LbContainer>      
-            {arr}       
+        <LbContainer>
+            <h1>Trenutno ne postoje korisnici.</h1>
         </LbContainer>
     )
+    
 }
 
 
